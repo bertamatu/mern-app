@@ -1,9 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import './App.css';
+import { HomePage } from './app/containers/HomePage';
+import tw from 'twin.macro';
+
+const AppContainer = styled.section`
+  ${tw`
+    w-full
+    h-full
+    flex
+    flex-col
+  `}
+`
 
 function App() {
   return (
-    <div className="App"> mern app </div>
+    <AppContainer>
+      <HomePage/>
+    </AppContainer>
   );
 }
 
