@@ -39,7 +39,6 @@ const NavItem = styled.li<{ menu?: boolean}>` //optional prop
   `}
 `;
 
-
 export const NavItems = () => {
 
     const isMobile = useMediaQuery({ maxWidth: SCREENS.sm })
