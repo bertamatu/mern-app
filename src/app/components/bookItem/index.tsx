@@ -1,13 +1,36 @@
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { Button } from "../button";
+import { Marginer } from "../marginer";
+
+export const BookItem = () => {
+  return <CardContainer>
+    <ItemContainer>
+      <Icon>
+        <FontAwesomeIcon icon={faCalendarAlt} />
+      </Icon>
+      <Name>Pick Up Date</Name>
+    </ItemContainer>
+    <LineSeperator/>
+    <ItemContainer>
+    <Icon>
+        <FontAwesomeIcon icon={faCalendarAlt} />
+      </Icon>
+      <Name>Return Name</Name>
+    </ItemContainer>
+    <Marginer direction={"horizontal"} margin={"2em"} />
+    <Button text="Book Your Clothes"/>
+  </CardContainer>
+}
 
 const CardContainer = styled.div`
   ${tw`
     flex
     justify-center
     items-center
-    round-md
     bg-white
     pt-1
     pb-1
@@ -29,15 +52,42 @@ const ItemContainer = styled.div`
 const Icon = styled.span`
   ${tw`
     text-red-500
-  `}
-`
+      fill-current
+      text-xs
+      md:text-base
+      mr-1
+      md:mr-3
+  `};
+`;
 
-export const BookItem = () => {
-  return (
-  <CardContainer>
-    <ItemContainer>
-      <Icon></Icon>
-    </ItemContainer>
-  </CardContainer>
-  )
-}
+const SmallIcon = styled.span`
+  ${tw`
+    text-gray-500
+    fill-current
+    text-xs
+    md:text-base
+    ml-1
+  `};
+`;
+
+const Name = styled.span`
+  ${tw`
+    text-gray-600
+    text-xs
+    md:text-sm
+    cursor-pointer
+    select-none
+  `};
+`;
+
+const LineSeperator = styled.span`
+  width: 2px;
+  height: 45%;
+  ${tw`
+    bg-gray-300
+    mr-2
+    ml-2
+    md:mr-5
+    md:ml-5
+  `};
+`;
